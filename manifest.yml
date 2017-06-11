@@ -1,0 +1,15 @@
+---
+declared-services:
+  my-conversation-service:
+    label: conversation
+    plan: free
+applications:
+- name: chat-batfamily-v1
+  command: npm start
+  path: .
+  memory: 256M
+  instances: 1
+  services:
+  - chat-dc
+  env:
+    NPM_CONFIG_PRODUCTION: false
